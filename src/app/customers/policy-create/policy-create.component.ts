@@ -16,12 +16,6 @@ export class PolicyCreateComponent {
   id: boolean;
   constructor(public customerService: RiskItemService) {}
 
-  // onIdValidation(formd) {
-  //   if (this.customerService.isValidNumber(formd) === false) {
-  //     return;
-  //   }
-  // }
-
   onAddCustomer(form: NgForm) {
     if (form.invalid) {
       return;
