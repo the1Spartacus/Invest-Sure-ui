@@ -1,0 +1,149 @@
+<mat-card *ngIf="customer">
+  <p>Add Customer</p>
+    <form #customer = "ngForm" (submit)="onAddCustomer(customer)">
+    <div class="container">
+      <mat-form-field>
+        <input matInput
+         placeholder="First Name"
+         name="FirstName"
+         ngModel
+         required
+         #FirstName = "ngModel">
+         <mat-error *ngIf="FirstName.invalid">Please enter first name</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+         placeholder="Surname"
+          name="Surname"
+           ngModel
+            required
+            #Surname = "ngModel">
+        <mat-error *ngIf="Surname.invalid">Please enter surname</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+         placeholder="SA ID"
+          name="ZAID"
+           ngModel
+            required
+            #ZAID = "ngModel">
+        <mat-error *ngIf="ZAID.invalid">{{idErrorMsg}}</mat-error>
+        <mat-error *ngIf="ZAID.invalid">{{ErrorMsg}}</mat-error>
+      </mat-form-field>
+    </div>
+      <button mat-raised-button color="primary" type="submit">Next</button>
+    </form>
+    </mat-card>
+<!-- policy -->
+    <mat-card *ngIf="policy">
+        <p>Add Policy</p>
+        <form (submit) = "onAddPolicy(polic)" #polic = "ngForm">
+        <div class="container">
+          <mat-form-field>
+            <input matInput
+             placeholder="Debit Order Date"
+             name="DebitOrderDate"
+             ngModel
+             required
+             #DebitOrderDate = "ngModel">
+             <mat-error *ngIf="DebitOrderDate.invalid">Debit Order Date</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput
+             placeholder="Policy Inception Date"
+              name="PolicyInceptionDate"
+               ngModel
+                required
+                #PolicyInceptionDate = "ngModel">
+            <mat-error *ngIf="PolicyInceptionDate.invalid">Please enter Policy Inception Date</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput
+             placeholder="Policy Number"
+              name="PolicyNumber"
+               ngModel
+                required
+                #PolicyNumber = "ngModel">
+            <mat-error *ngIf="PolicyNumber.invalid">Please enter policy number</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+              <input matInput
+               placeholder="Policy Status"
+                name="PolicyStatus"
+                 ngModel
+                  required
+                  #PolicyStatus = "ngModel">
+              <mat-error *ngIf="PolicyStatus.invalid">Please enter policy status</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput
+                 placeholder="Premium"
+                  name="Premium"
+                   ngModel
+                    required
+                    #Premium = "ngModel">
+                <mat-error *ngIf="Premium.invalid">Please enter Premium</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                  <input matInput
+                   placeholder="Transction Date"
+                    name="TransctionDate"
+                     ngModel
+                      required
+                      #TransctionDate = "ngModel">
+                  <mat-error *ngIf="TransctionDate.invalid">Please enter Transction Date</mat-error>
+                </mat-form-field>
+        </div>
+          <button mat-raised-button color="primary" type="submit">Next</button>
+        </form>
+        </mat-card>
+
+<!-- risk item -->
+<mat-card *ngIf="item">
+    <p>Add Risk Items</p>
+    <form (submit) = "onAddRisk(riskItem)" #riskItem = "ngForm">
+    <div class="container">
+      <mat-form-field>
+        <input matInput
+         placeholder="Premiem"
+         name="Premium"
+         ngModel
+         required
+         #Premium = "ngModel">
+         <mat-error *ngIf="Premium.invalid">Please enter Premiem</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+         placeholder="Risk Item Name"
+          name="RiskItemName"
+           ngModel
+            required
+            #RiskItemName = "ngModel">
+        <mat-error *ngIf="RiskItemName.invalid">Please enter risk item name</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+         placeholder="Risk Start Date"
+          name="RiskStartDate"
+           ngModel
+            required
+            #RiskStartDate = "ngModel">
+        <mat-error *ngIf="RiskStartDate.invalid">Please enter risk start date</mat-error>
+      </mat-form-field>
+    </div>
+      <button mat-raised-button color="primary" type="submit">Add Risk Items</button>
+    </form>
+     <button mat-raised-button color="primary" (click)="onFinish()">Finish</button>
+    </mat-card>
+
+
+
